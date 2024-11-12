@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サポートカテゴリ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="検索...">
+            <button onclick="searchContent()">検索</button>
+          </div>
+          <div id="searchResults" style="display: none;">
+            <ul id="searchResultsList"></ul>
+          </div>
+
+        <div class="sidebar">
+
+        <!-- ロゴ画像 -->
+        <div class="logo-container">
+            <img src="よくある質問.jpg" alt="ロゴ" class="logo">
+        </div>
+
+
+          <ul>
+            <li class="level-1" onclick="showSubcategories('account')">アカウント</li>
+            <ul id="account" class="subcategory">
+              <li onclick="showContent('アカウント認証')">アカウント認証</li>
+              <li onclick="showContent('passwordQueries')">パスワードに関する質問</li>
+              <li onclick="showContent('updateDetails')">詳細の更新</li>
+              <li onclick="showContent('accountCreation')">アカウントの作成と削除</li>
+              <li onclick="showContent('marketingOptInOut')">マーケティングのオプトイン/オプトアウト</li>
+              <li onclick="showContent('countryAvailability')">利用可能な国</li>
+              <li onclick="showContent('dataRequest')">データリクエスト</li>
+              <li onclick="showContent('otherAccountQueries')">その他のアカウントに関する質問</li>
+            </ul>
+    
+            <li class="level-1" onclick="showSubcategories('account-security')">アカウントのセキュリティ</li>
+            <ul id="account-security" class="subcategory">
+              <li onclick="showContent('securityFeatures')">セキュリティ機能</li>
+              <li onclick="showContent('otherAccountSecurityQueries')">その他のアカウントセキュリティに関する質問</li>
+              <li onclick="showContent('unwantedAccess')">不正アクセス</li>
+            </ul>
+    
+            <li class="level-1" onclick="showSubcategories('responsible-gaming')">責任あるゲーム</li>
+            <ul id="responsible-gaming" class="subcategory">
+              <li onclick="toggleSubSubcategory('limits')">制限</li>
+              <ul id="limits" class="subsubcategory">
+                <li onclick="showContent('limitsIncrease')">制限 - 増加</li>
+                <li onclick="showContent('limitsDecrease')">制限 - 減少</li>
+              </ul>
+              <li onclick="toggleSubSubcategory('selfExclusion')">自己排除</li>
+              <ul id="selfExclusion" class="subsubcategory">
+                <li onclick="showContent('timeOut')">一時休止</li>
+                <li onclick="showContent('permanentExclusion')">恒久的排除とアカウント閉鎖</li>
+              </ul>
+              <li onclick="showContent('otherResponsibleGamingQueries')">その他の責任あるゲームに関する質問</li>
+            </ul>
+    
+            <li class="level-1" onclick="showSubcategories('game-related')">ゲーム関連</li>
+            <ul id="game-related" class="subcategory">
+              <li onclick="toggleSubSubcategory('gameInformation')">ゲーム情報</li>
+              <ul id="gameInformation" class="subsubcategory">
+                <li onclick="showContent('allInOrFold')">オールインまたはフォールド</li>
+                <li onclick="showContent('spinGold')">スピン & ゴールド</li>
+                <li onclick="showContent('battleRoyale')">バトルロイヤル</li>
+                <li onclick="showContent('flipGo')">フリップ & ゴー</li>
+                <li onclick="showContent('rushCash')">ラッシュ & キャッシュ</li>
+                <li onclick="showContent('holdEm')">ホールデム</li>
+                <li onclick="showContent('omaha')">オマハ</li>
+                <li onclick="showContent('shortDeck')">ショートデッキ</li>
+                <li onclick="showContent('casino')">カジノ</li>
+                <li onclick="showContent('otherGameTypes')">その他のゲームタイプ</li>
+              </ul>
+            
+              <li onclick="toggleSubSubcategory('tournaments')">トーナメント</li>
+              <ul id="tournaments" class="subsubcategory">
+                <li onclick="showContent('dailyGuarantees')">デイリー保証</li>
+                <li onclick="showContent('bountyHunters')">バウンティハンターズ</li>
+                <li onclick="showContent('mysteryBounty')">ミステリーバウンティ</li>
+                <li onclick="showContent('ggMasters')">GGマスターズ</li>
+                <li onclick="showContent('million')">ミリオン$</li>
+                <li onclick="showContent('satellites')">サテライト</li>
+                <li onclick="showContent('tournamentSeriesSpecialEvents')">トーナメントシリーズと特別イベント</li>
+                <li onclick="showContent('otherTournaments')">その他のトーナメント</li>
+              </ul>
+            
+              <li onclick="toggleSubSubcategory('clientGameFeatures')">クライアント/ゲーム機能</li>
+              <ul id="clientGameFeatures" class="subsubcategory">
+                <li onclick="showContent('stakingBacking')">ステーキングとバック</li>
+                <li onclick="showContent('smartHUD')">スマートHUD</li>
+                <li onclick="showContent('propBets')">プロップベット</li>
+                <li onclick="showContent('earlyBirdBenefits')">アーリーバード特典</li>
+                <li onclick="showContent('evCashout')">EVキャッシュアウト</li>
+                <li onclick="showContent('otherFeatures')">その他の機能</li>
+              </ul>
+            
+              <li onclick="showContent('pokerCraft')">ポーカークラフト</li>
+              <li onclick="showContent('gameIntegrity')">ゲームの公正性</li>
+              <li onclick="showContent('otherGameRelatedQueries')">その他のゲーム関連質問</li>
+            </ul>
+    
+            <li class="level-1" onclick="showSubcategories('cashier-queries')">キャッシャーに関する質問</li>
+            <ul id="cashier-queries" class="subcategory">
+              <li onclick="toggleSubSubcategory('depositQueries')">入金に関する質問</li>
+              <ul id="depositQueries" class="subsubcategory">
+                <li onclick="showContent('howToDeposit')">入金方法</li>
+                <li onclick="showContent('otherDepositQueries')">その他の入金に関する質問</li>
+              </ul>
+            
+              <li onclick="toggleSubSubcategory('withdrawalQueries')">出金に関する質問</li>
+              <ul id="withdrawalQueries" class="subsubcategory">
+                <li onclick="showContent('howToWithdraw')">出金方法</li>
+                <li onclick="showContent('otherWithdrawalQueries')">その他の出金に関する質問</li>
+              </ul>
+            
+              <li onclick="toggleSubSubcategory('inGameCurrencies')">ゲーム内通貨</li>
+              <ul id="inGameCurrencies" class="subsubcategory">
+                <li onclick="showContent('tCurrency')">T$</li>
+                <li onclick="showContent('cCurrency')">C$</li>
+                <li onclick="showContent('tickets')">チケット</li>
+              </ul>
+            
+              <li onclick="showContent('transactionHistory')">取引履歴</li>
+              <li onclick="showContent('transfersQueries')">送金に関する質問</li>
+              <li onclick="showContent('otherCashierQueries')">その他のキャッシャーに関する質問</li>
+            </ul>
+            
+    
+            <li class="level-1" onclick="showSubcategories('technical-queries')">技術的な質問</li>
+            <ul id="technical-queries" class="subcategory">
+              <li onclick="showContent('connectionIssues')">接続の問題</li>
+              <li onclick="showContent('downloadInstallation')">ダウンロードとインストール</li>
+            
+              <li onclick="toggleSubSubcategory('desktopClient')">デスクトップクライアント</li>
+              <ul id="desktopClient" class="subsubcategory">
+                <li onclick="showContent('windowsClient')">Windows クライアント</li>
+                <li onclick="showContent('macOSClient')">MacOS クライアント</li>
+              </ul>
+            
+              <li onclick="toggleSubSubcategory('mobileApp')">モバイルアプリ</li>
+              <ul id="mobileApp" class="subsubcategory">
+                <li onclick="showContent('androidApp')">Android アプリ</li>
+                <li onclick="showContent('iOSApp')">iOS アプリ</li>
+              </ul>
+            
+              <li onclick="showContent('gameCancellationRefundPolicy')">ゲームキャンセルと返金ポリシー</li>
+              <li onclick="showContent('otherTechnicalQueries')">その他の技術的な質問</li>
+            </ul>
+            
+    
+            <li class="level-1" onclick="showSubcategories('promotions-rewards')">プロモーションと報酬</li>
+            <ul id="promotions-rewards" class="subcategory">
+              <li onclick="showContent('fishBuffet')">フィッシュビュッフェ</li>
+              <li onclick="showContent('honeymoonForNewcomers')">新規ユーザー向けハネムーン</li>
+              <li onclick="showContent('welcomeBonus')">ウェルカムボーナス</li>
+              <li onclick="showContent('jackpots')">ジャックポット</li>
+              <li onclick="showContent('dailyFreebie')">デイリーフリービー</li>
+              <li onclick="showContent('leaderboards')">リーダーボード</li>
+              <li onclick="showContent('thanksGG')">サンクスGG</li>
+              <li onclick="showContent('casinoBonus')">カジノボーナス</li>
+              <li onclick="showContent('otherPromotionsRewards')">その他のプロモーションと報酬</li>
+            </ul>
+          </ul>
+        </div>
+
+    <div class="main-content">
+      <p id="selectedCategoryTitle" class="selectedCategoryLevel">カテゴリを選択すると詳細が表示されます</p>
+      <div id="categoryDetails">
+        <!-- デフォルトのコンテンツまたは初期メッセージをここに配置 -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
